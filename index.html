@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Poonam — Homeopathic Specialist</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- THREE.JS CANVAS -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav">
+    <a href="#hero" class="nav-logo">
+      <div class="cross">✚</div>
+      <span>Poonam Clinic</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#disease-finder">Treatments</a></li>
+      <!-- <li><a href="#appointment">Appointment</a></li> -->
+    </ul>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <i class="ri-search-line"></i>
+        <input type="text" placeholder="Search disease…" id="nav-search">
+      </div>
+      <button class="btn-appt" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+    <div class="hamburger" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mob-menu">
+    <a href="#hero" onclick="closeMob()">Home</a>
+    <a href="#about" onclick="closeMob()">About</a>
+    <a href="#services" onclick="closeMob()">Services</a>
+    <a href="#disease-finder" onclick="closeMob()">Treatments</a>
+    <a href="#appointment" onclick="closeMob()">Appointment</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="hero-badge"><span class="dot"></span> Available for Consultation</div>
+        <h1>Dr. Poonam<br><em>Homeopathic</em><br>Specialist</h1>
+        <p class="hero-sub">Holistic healing through the science of homeopathy. Personalized natural treatments for lasting wellness and vibrant health.</p>
+        <div class="hero-ctas">
+          <!-- <a href="#appointment" class="btn-primary">Book Appointment</a> -->
+          <a href="#disease-finder" class="btn-outline">Find Medicine</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="num" data-count="15">0</span><span class="label">Years Experience</span></div>
+          <div class="stat"><span class="num" data-count="3000">0</span><span class="label">Patients Cured</span></div>
+          <div class="stat"><span class="num" data-count="32">0</span><span class="label">Diseases Treated</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="doctor-card">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="doctor-img-wrap">
+            <img src="https://plus.unsplash.com/premium_vector-1682306215391-d727d3533f35?q=80&w=953&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dr. Poonam">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="float-badge top">
+            <i class="ri-award-fill"></i>
+            <div class="fb-text"><span>Certified</span><strong>BHMS Gold</strong></div>
+          </div>
+          <div class="float-badge bot">
+            <i class="ri-star-fill"></i>
+            <div class="fb-text"><span>Rating</span><strong>4.9 / 5.0</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header">
+      <div class="section-tag">What We Offer</div>
+      <h2>Our Medical Services</h2>
+      <p>Comprehensive homeopathic care for all stages of life, delivered with compassion and expertise.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-flask-line"></i></div>
+        <h3>Homeopathic Consultation</h3>
+        <p>In-depth evaluation and personalized remedy selection for your unique constitution.</p>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-heart-pulse-line"></i></div>
+        <h3>Chronic Diseases</h3>
+        <p>Long-term holistic management of chronic conditions like arthritis, diabetes, and skin disorders.</p>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-emotion-happy-line"></i></div>
+        <h3>Mental Wellness</h3>
+        <p>Natural remedies for anxiety, depression, stress, and sleep disorders.</p>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-parent-line"></i></div>
+        <h3>Pediatric Care</h3>
+        <p>Gentle and safe homeopathic treatments specially formulated for children.</p>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-seedling-line"></i></div>
+        <h3>Lifestyle Medicine</h3>
+        <p>Diet guidance, detox programs, and preventive care for overall wellness.</p>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon"><i class="ri-video-chat-line"></i></div>
+        <h3>Online Consultation</h3>
+        <p>Consult Dr. Poonam from anywhere via secure video call. Available 7 days a week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISEASE FINDER -->
+  <section id="disease-finder">
+    <div class="finder-wrap">
+      <div class="section-header">
+        <div class="section-tag">Treatment Guide</div>
+        <h2>Find Your Medicine</h2>
+        <p>Search or browse 32+ conditions and discover the right homeopathic remedy instantly.</p>
+      </div>
+      <div class="finder-ui">
+        <div class="finder-tabs">
+          <button class="finder-tab active" onclick="filterTab(this,'all')">All</button>
+          <button class="finder-tab" onclick="filterTab(this,'respiratory')">Respiratory</button>
+          <button class="finder-tab" onclick="filterTab(this,'digestive')">Digestive</button>
+          <button class="finder-tab" onclick="filterTab(this,'skin')">Skin</button>
+          <button class="finder-tab" onclick="filterTab(this,'mental')">Mental</button>
+          <button class="finder-tab" onclick="filterTab(this,'musculo')">Joints</button>
+          <button class="finder-tab" onclick="filterTab(this,'other')">Other</button>
+        </div>
+        <div class="search-disease">
+          <i class="ri-search-line s-icon"></i>
+          <input type="text" id="disease-search" placeholder="Type to search disease…" oninput="searchDiseases(this.value)">
+          <button class="clear-btn" id="clear-btn" onclick="clearSearch()"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="disease-grid" id="disease-grid"></div>
+        <div class="result-panel" id="result-panel">
+          <div class="result-placeholder">
+            <i class="ri-capsule-line"></i>
+            Select a disease to see homeopathic medicines
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-wrap">
+      <div class="about-left">
+        <div class="about-img-wrap">
+          <img src="https://plus.unsplash.com/premium_vector-1682306215391-d727d3533f35?q=80&w=953&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Clinic">
+          <div class="about-img-overlay">
+            <div class="about-exp-badge">✦ 15+ Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="section-tag">About Dr. Poonam</div>
+        <h2>Healing With Nature, Guided by Science</h2>
+        <p>Dr. Poonam is a certified BHMS practitioner with over 15 years of experience in classical homeopathy. She believes in treating the root cause, not just symptoms, using carefully selected constitutional remedies.</p>
+        <p>Her clinic has helped over 3,000 patients achieve lasting relief from chronic, acute, and psychosomatic conditions using the safest, most natural approach to healthcare.</p>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="ri-check-double-line"></i> Classical Homeopathy</div>
+          <div class="skill-item"><i class="ri-check-double-line"></i> Constitutional Medicine</div>
+          <div class="skill-item"><i class="ri-check-double-line"></i> Child Health Specialist</div>
+          <div class="skill-item"><i class="ri-check-double-line"></i> Mental Health Remedies</div>
+          <div class="skill-item"><i class="ri-check-double-line"></i> Skin & Hair Treatment</div>
+          <div class="skill-item"><i class="ri-check-double-line"></i> Chronic Disease Management</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-header">
+      <div class="section-tag">Patient Stories</div>
+      <h2>What Our Patients Say</h2>
+      <p>Real experiences from people whose lives were transformed through homeopathic care.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>After years of taking allopathic medicines for my eczema with no relief, Dr. Poonam treated me with homeopathy and within 3 months my skin cleared completely. Truly miraculous!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div><h5>Rajesh Kumar</h5><span>Eczema Patient</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>My daughter suffered from recurrent fever and colds. Dr. Poonam's treatment built her immunity naturally. It has been 2 years and she rarely falls ill now. Highly recommended!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SP</div>
+          <div><h5>Sunita Pandey</h5><span>Child's Parent</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>I was struggling with severe anxiety and insomnia for years. The personalized homeopathic treatment gave me my life back. I sleep well and feel calm every single day now.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AM</div>
+          <div><h5>Arjun Mehta</h5><span>Anxiety & Insomnia</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT -->
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <div class="cross">✚</div>
+          <span>Poonam Clinic</span>
+        </a>
+        <p>Holistic homeopathic care for the whole family. Healing naturally since 2009.</p>
+        <div class="footer-social">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#appointment">Appointment</a>
+      </div>
+      <div class="footer-col">
+        <h4>Treatments</h4>
+        <a href="#disease-finder">Skin Disorders</a>
+        <a href="#disease-finder">Mental Health</a>
+        <a href="#disease-finder">Chronic Diseases</a>
+        <a href="#disease-finder">Pediatric Care</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">📍 Arrah, Bihar, India</a>
+        <a href="#">📞 +91 98765 43210</a>
+        <a href="#">✉ drpoonam@clinic.in</a>
+        <a href="#">🕐 Mon–Sat, 9am–6pm</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Poonam Homeopathic Clinic. All rights reserved.</p>
+      <p>Privacy · Terms · Sitemap</p>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
